@@ -3,14 +3,14 @@ Esse projeto foi desenvolvido como um teste utilizando WebAPI com o .Net Framewo
 ## Decisões de projeto
 * Por questão de famiiaridade, optou-se pela utilização do Visual Basic.Net para o desenvolvimento do teste;
 * O projeto foi dividido em 8 pastas principais:
-** Controllers: Contém os controllers que respondem pelas requisições da API;
-** Data: Contém as entidades responsáveis pela manipulação de dados (DAOs, DataSourceAdapters, etc.);
-** DataModels: Contém os modelos de entidades correspondentes às tabelas do banco de dados;
-** DefaultComparers: COntém as entidades responsáveis pela comparação de DataModels do mesmo tipo
-** Extensions: Contém as entidades que definem métodos de extensão para facilitar tarefas comuns que se repetem com frequência
-** Interfaces: COntém as interfaces que definem estruturas genéricas que deverão ser implementadas por classes especializadas
-** lib: Contém as bibliotecas do DOD Framework para manipulação de fontes de dados. O DOD Framework foi criado como resultado da minha dissertação de mestrado.
-** Models: cContém os modelos de entidades utilizados na interface da API com o usuário final
+* * Controllers: Contém os controllers que respondem pelas requisições da API;
+* * Data: Contém as entidades responsáveis pela manipulação de dados (DAOs, DataSourceAdapters, etc.);
+* * DataModels: Contém os modelos de entidades correspondentes às tabelas do banco de dados;
+* * DefaultComparers: COntém as entidades responsáveis pela comparação de DataModels do mesmo tipo
+* * Extensions: Contém as entidades que definem métodos de extensão para facilitar tarefas comuns que se repetem com frequência
+* * Interfaces: COntém as interfaces que definem estruturas genéricas que deverão ser implementadas por classes especializadas
+* * lib: Contém as bibliotecas do DOD Framework para manipulação de fontes de dados. O DOD Framework foi criado como resultado da minha dissertação de mestrado.
+* * Models: cContém os modelos de entidades utilizados na interface da API com o usuário final
 * Foi incluído um projeto de testes que contém uma classe para testar todas as funcionalidades da API;
 * As configurações de bancos de dados foram colocadas nos arquivos Web.Config (no projeto principal) e App.Config (no projeto de testes);
 ## Estrutura da API
@@ -84,7 +84,7 @@ Neste exemplo, está sendo usada autenticação integrada para uma instância do
 
 Para concluir a configuração é necessário editar "\Data\Adapters\DefaultSqlAdapter.vb" que contém o seguinte código:
 
-```vb
+```vb.net
 Public Class DefaultSqlAdapter
 	Inherits SqlDatabaseAdapter
 	Public Sub New()
@@ -96,7 +96,7 @@ End Class
 Conforme pode ser observado no exemplo, o nome da seção que foi declarada deve ser passado como argumento no construtor da classe base.
 
 ## Execução do projeto
-Uma vez que tenham sido feitas as configurações iniciais (incluindo o banco de dados), o projeto Ranking deve ser definido como projeto inicial. Após executar o programa, o navegador será aberto com a URL raíz e uma página de erro será exibida coma mensagem "HTTP Error 403.14 - Forbidden".
+Uma vez que tenham sido feitas as configurações iniciais (incluindo o banco de dados), o projeto Ranking deve ser definido como projeto inicial. Após executar o programa, o navegador será aberto com a URL raíz e uma página de erro será exibida com a mensagem "HTTP Error 403.14 - Forbidden".
 Na URL que aparece, deve ser acrscentado o endereço "/api/Ranking" e um JSON já aparecerá como resposta. Caso o banco de dados esteja vazio, aparecerá apenas "[]". Este resultado já é uma resposta para o método GET.
 
 Para testar o método POT, poderá ser feita uma requisição manual usando um aplicativo de TELNET ou ainda uma ferramenta de testes como o [Insomnia](https://insomnia.rest/download/).
